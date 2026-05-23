@@ -8,7 +8,7 @@ import { notFound } from "./middleware/notFound";
 import { errorHandler } from "./middleware/errorhandler";
 import { clerkMiddleware } from "@clerk/express";
 import { authRouter } from "./routes/auth/auth.routes";
-// import { adminProductRouter } from "./routes/admin/product.routes";
+import { adminProductRouter } from "./routes/admin/product.routes";
 // import { customerProductRouter } from "./routes/customer/product.routes";
 // import { customerAddressRouter } from "./routes/customer/address.routes";
 // import { adminPromoRouter } from "./routes/admin/promo.routes";
@@ -61,7 +61,7 @@ async function mainEntryFunction() {
 //   app.use("/customer", customerOrderRouter);
 
   // admin routes
-//   app.use("/admin", adminProductRouter);
+  app.use("/admin", adminProductRouter);
 //   app.use("/admin", adminPromoRouter);
 //   app.use("/admin", adminOrderRouter);
 //   app.use("/admin", adminSettingsRouter);
