@@ -9,10 +9,10 @@ import { errorHandler } from "./middleware/errorhandler";
 import { clerkMiddleware } from "@clerk/express";
 import { authRouter } from "./routes/auth/auth.routes";
 import { adminProductRouter } from "./routes/admin/product.routes";
-// import { customerProductRouter } from "./routes/customer/product.routes";
-// import { customerAddressRouter } from "./routes/customer/address.routes";
+import { customerProductRouter } from "./routes/customer/product.routes";
+import { customerAddressRouter } from "./routes/customer/address.routes";
 // import { adminPromoRouter } from "./routes/admin/promo.routes";
-// import { customerPromoRouter } from "./routes/customer/promo.routes";
+import { customerPromoRouter } from "./routes/customer/promo.routes";
 // import { customerCartWishlistRouter } from "./routes/customer/cart-wishlist.routes";
 // import { customerCheckoutRouter } from "./routes/customer/checkout.routes";
 // import { customerOrderRouter } from "./routes/customer/orders.routes";
@@ -52,9 +52,9 @@ async function mainEntryFunction() {
 
   // customer routes
 //   app.use("/customer", customerHomeRouter);
-//   app.use("/customer", customerProductRouter);
-//   app.use("/customer", customerAddressRouter);
-//   app.use("/customer", customerPromoRouter);
+  app.use("/customer", customerProductRouter);
+  app.use("/customer", customerAddressRouter);
+  app.use("/customer", customerPromoRouter);
 //   app.use("/customer", customerCartWishlistRouter);
 //   app.use("/customer", customerCheckoutRouter);
 //   app.use("/customer", customerCheckoutWithPointsRouter);
