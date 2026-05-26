@@ -15,12 +15,12 @@ import { adminPromoRouter } from "./routes/admin/promo.routes";
 import { customerPromoRouter } from "./routes/customer/promo.routes";
 import { customerCartWishlistRouter } from "./routes/customer/cart-wishlist.routes";
 import { customerCheckoutRouter } from "./routes/customer/checkout.routes";
-// import { customerOrderRouter } from "./routes/customer/orders.routes";
-// import { customerCheckoutWithPointsRouter } from "./routes/customer/checkout-with-points.routes";
+import { customerOrderRouter } from "./routes/customer/orders.routes";
+import { customerCheckoutWithPointsRouter } from "./routes/customer/checkout-with-points.routes";
 // import { adminOrderRouter } from "./routes/admin/orders.routes";
 // import { adminSettingsRouter } from "./routes/admin/settings.routes";
 // import { adminDashboardRouter } from "./routes/admin/dashboard.routes";
-// import { customerHomeRouter } from "./routes/customer/home.routes";
+import { customerHomeRouter } from "./routes/customer/home.routes";
 
 async function mainEntryFunction() {
   await connectDB();
@@ -51,14 +51,14 @@ async function mainEntryFunction() {
   app.use("/auth", authRouter);
 
   // customer routes
-//   app.use("/customer", customerHomeRouter);
+  app.use("/customer", customerHomeRouter);
   app.use("/customer", customerProductRouter);
   app.use("/customer", customerAddressRouter);
   app.use("/customer", customerPromoRouter);
   app.use("/customer", customerCartWishlistRouter);
   app.use("/customer", customerCheckoutRouter);
-//   app.use("/customer", customerCheckoutWithPointsRouter);
-//   app.use("/customer", customerOrderRouter);
+  app.use("/customer", customerCheckoutWithPointsRouter);
+  app.use("/customer", customerOrderRouter);
 
   // admin routes
   app.use("/admin", adminProductRouter);
