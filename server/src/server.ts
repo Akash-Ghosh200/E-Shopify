@@ -14,7 +14,7 @@ import { customerAddressRouter } from "./routes/customer/address.routes";
 import { adminPromoRouter } from "./routes/admin/promo.routes";
 import { customerPromoRouter } from "./routes/customer/promo.routes";
 import { customerCartWishlistRouter } from "./routes/customer/cart-wishlist.routes";
-// import { customerCheckoutRouter } from "./routes/customer/checkout.routes";
+import { customerCheckoutRouter } from "./routes/customer/checkout.routes";
 // import { customerOrderRouter } from "./routes/customer/orders.routes";
 // import { customerCheckoutWithPointsRouter } from "./routes/customer/checkout-with-points.routes";
 // import { adminOrderRouter } from "./routes/admin/orders.routes";
@@ -56,7 +56,7 @@ async function mainEntryFunction() {
   app.use("/customer", customerAddressRouter);
   app.use("/customer", customerPromoRouter);
   app.use("/customer", customerCartWishlistRouter);
-//   app.use("/customer", customerCheckoutRouter);
+  app.use("/customer", customerCheckoutRouter);
 //   app.use("/customer", customerCheckoutWithPointsRouter);
 //   app.use("/customer", customerOrderRouter);
 
