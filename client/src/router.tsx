@@ -5,14 +5,18 @@ import { PublicOnlyLayout } from "./components/auth/PublicOnlyLayout";
 import { SignInPage } from "./pages/auth/Sign-in";
 import { SignUpPage } from "./pages/auth/Sign-up";
 import { ProtectedLayout } from "./components/auth/ProtectedLayout";
-import { CustomerProfile } from "./pages/customer/Profile";
 import { RoleGuardLayout } from "./components/auth/RoleGuardLayout";
 import { AdminLayout } from "./components/layout/AdminLayout";
 import AdminDashboard from "./pages/admin/Dashboard";
 import AdminProducts from "./pages/admin/Products";
 import AdminPromos from "./pages/admin/Promos";
-import AdminSettings from "./pages/admin/Settings";
 import AdminOrders from "./pages/admin/Orders";
+import AdminSettings from "./pages/admin/Settings";
+import Collections from "./pages/customer/Collections";
+import { CustomerProfile } from "./pages/customer/Profile";
+// import CollectionDetails from "./pages/customer/Collection-Details";
+// import CustomerOrderSuccessPage from "./pages/customer/Order-Sucess";
+
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +37,10 @@ export const router = createBrowserRouter([
           {
             path: "sign-up/*",
             element: <SignUpPage />,
+          },
+          {
+            path: "collections",
+            element: <Collections />,
           },
         ],
       },
