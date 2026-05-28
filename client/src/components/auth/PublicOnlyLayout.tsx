@@ -1,19 +1,24 @@
 import { useAuthStore } from "@/features/auth/store";
 import { useAuth } from "@clerk/react";
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Commonloader } from "../common/Loader";
 
 export function PublicOnlyLayout() {
   const { isLoaded, isSignedIn } = useAuth();
   const { isBootstrapped, status } = useAuthStore();
+  const location = useLocation();
 
   if (!isLoaded) null;
 
   if (isSignedIn && (!isBootstrapped || status === "loading")) {
-    return null;
+    return <Commonloader />;
   }
 
-  if (isSignedIn) {
-    return <Navigate to={"profile"} replace />;
+  if (
+    isSignedIn &&
+    (location.pathname === "/sign-in" || location.pathname === "sign-up")
+  ) {
+    return <Navigate to={"/"} replace />;
   }
 
   return <Outlet />;
