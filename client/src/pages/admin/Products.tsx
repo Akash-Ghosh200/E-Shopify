@@ -10,7 +10,7 @@ const pageWrap = "space-y-6 p-6";
 const cardClass = "border-border bg-card shadow-sm";
 
 const cardHeaderClass = "space-y-4";
-
+ 
 const cardTitleClass = "text-xl";
 
 const cardContentClass = "space-y-4";

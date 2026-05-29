@@ -9,14 +9,12 @@ import { RoleGuardLayout } from "./components/auth/RoleGuardLayout";
 import { AdminLayout } from "./components/layout/AdminLayout";
 import AdminDashboard from "./pages/admin/Dashboard";
 import AdminProducts from "./pages/admin/Products";
-import AdminPromos from "./pages/admin/Promos";
+import AdminCoupons from "./pages/admin/Promos";
 import AdminOrders from "./pages/admin/Orders";
 import AdminSettings from "./pages/admin/Settings";
 import Collections from "./pages/customer/Collections";
-import { CustomerProfile } from "./pages/customer/Profile";
-// import CollectionDetails from "./pages/customer/Collection-Details";
-// import CustomerOrderSuccessPage from "./pages/customer/Order-Sucess";
-
+import CollectionDetails from "./pages/customer/Collection-Details";
+import CustomerOrderSuccessPage from "./pages/customer/Order-Sucess";
 
 export const router = createBrowserRouter([
   {
@@ -42,14 +40,18 @@ export const router = createBrowserRouter([
             path: "collections",
             element: <Collections />,
           },
+          {
+            path: "collection/:id",
+            element: <CollectionDetails />,
+          },
         ],
       },
       {
         element: <ProtectedLayout />,
         children: [
-            {
-            path: "profile",
-            element: <CustomerProfile />,
+          {
+            path: "order-success",
+            element: <CustomerOrderSuccessPage />,
           },
         ],
       },
@@ -76,7 +78,7 @@ export const router = createBrowserRouter([
               },
               {
                 path: "coupons",
-                element: <AdminPromos />,
+                element: <AdminCoupons />,
               },
               {
                 path: "orders",
