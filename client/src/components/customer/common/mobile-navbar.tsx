@@ -66,7 +66,7 @@ const drawerItemLink =
 const cartBadge =
   "absolute -right-1 -top-1 inline-flex min-w-5 items-center justify-center rounded-full bg-amber-400 px-1.5 text-[11px] font-semibold leading-5 text-black";
 
-function DrawerSection({ title, items }: { title: string; items: NavItem[] }) {
+ function DrawerSection({ title, items }: { title: string; items: NavItem[] }){
   return (
     <section className={drawerSection}>
       <p className={drawerTitle}>{title}</p>
